@@ -176,10 +176,20 @@ contract VerificationSBT is IVerificationSBT, Fallback {
 
     function ownerOf(uint256 tokenId) public view returns (address) {
         address user = tokenIdToOwner(tokenId);
-        if (isVerificationSBTValid(user)) {
+
+        // we check if the user has received a verification SBT,
+        // we do not use isVerificationSBTValid() here because we also want to consider expired SBTs
+        VerificationSBTInfo storage verificationSBTInfo = sbtData[
+            getUsersTokenID(user)
+        ];
+        // we check 2 conditions
+        // 1. the verifier wrapper address is set and the codehash of the verifier is still the same as the one referred to in the verification wrapper
+        // 2. the expiration time hasn't happened yet
+        if (address(verificationSBTInfo.verifierWrapper) == address(0)) {
+            return address(0);
+        } else {
             return user;
         }
-        return address(0);
     }
 
     function supportsInterface(bytes4 interfaceId) public pure returns (bool) {

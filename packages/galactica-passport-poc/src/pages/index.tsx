@@ -38,7 +38,7 @@ import {
   ConnectWalletButton,
 } from '../../../galactica-dapp/src/components';
 import mockDAppABI from '../../../galactica-dapp/src/config/abi/MockDApp.json';
-import twitterFollowersCountProofABI from '../../../galactica-dapp/src/config/abi/TwitterFollowersCountProof.json';
+import twitterSBTManagerABI from '../../../galactica-dapp/src/config/abi/SBTManager.json';
 import addresses from '../../../galactica-dapp/src/config/addresses';
 import {
   defaultSnapOrigin,
@@ -348,7 +348,7 @@ const Index = () => {
       const proofInput = {
         currentTime: await getCurrentBlockTime(),
         // specific inputs to prove that the twitterZkCertificate with at least 100 followers
-        followersCountThreshold: '200',
+        followersCountThreshold: '100',
       };
 
       const res: any = await generateZKProof(
@@ -364,7 +364,7 @@ const Index = () => {
           },
           userAddress: getUserAddress(),
           description:
-            'This proof discloses that you hold a valid twitterZkCertificate and that your follower count is at least 100.',
+            'This ZK proof shows: You have over 100 followers on X.',
           publicInputDescriptions:
             twitterFollowersCountProofPublicInputDescriptions,
           zkInputRequiresPrivKey: false,
@@ -379,24 +379,24 @@ const Index = () => {
         payload: `Proof generation successful.`,
       });
       dispatch({ type: MetamaskActions.SetProofData, payload: zkp });
-      // send proof directly on chain
+
       // eslint-disable-next-line id-length
       const [a, b, c] = processProof(zkp.proof);
       const publicInputs = processPublicSignals(zkp.publicSignals);
 
       console.log(`Sending proof for on-chain verification...`);
-      // this is the on-chain function that requires a ZKP
       // @ts-expect-error https://github.com/metamask/providers/issues/200
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       const signer = provider.getSigner();
-      // get contracts
-      const twitterFollowersCountProof = new ethers.Contract(
+
+      const twitterSBTManager = new ethers.Contract(
         // eslint-disable-next-line import/no-named-as-default-member
-        addresses.twitterFollowersCountProof,
-        twitterFollowersCountProofABI.abi,
+        addresses.twitterSBTManager,
+        twitterSBTManagerABI.abi,
         signer,
       );
-      let tx = await twitterFollowersCountProof.verifyProof(
+      let tx = await twitterSBTManager.mintSBT(
+        0, // index for followers count > 100
         a,
         b,
         c,

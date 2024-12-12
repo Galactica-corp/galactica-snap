@@ -48,7 +48,7 @@ async function main() {
     deployer,
     repeatableZkKYC.zkKYCSC.address,
     {
-      uri: 'ipfs://QmeFsERdKfKW3fmdXVHvvwdkqVHNs3TU6oqEdUrgPchyw7',
+      uri: 'ipfs://QmdYZJP26w8dXHvR9g5Bykw4Ziqvgrst6p9XesZeR1qa2R',
       name: 'KYC Verification SBT',
       symbol: 'KYCOK',
     },
@@ -75,17 +75,17 @@ async function main() {
     deployer,
     infrastructure.recordRegistry.address,
     {
-      uri: 'ipfs://Qmeurn8qiGQF5CacFD4QnnHGMqTb4oNrDVJWC1SH3RaaU8',
+      uri: 'ipfs://Qmc7fCZDftWvgsPuW2kVALEdUWWWTq9oKTP3vUXpct6mgP',
       name: 'KYC Non-US Verification SBT',
       symbol: 'NONUS',
     },
     {
-      uri: 'ipfs://Qmeu9GcAhTDkafd4RRqx22NkboerSiNdoXsjwoWPCBnAK8',
+      uri: 'ipfs://QmcxfT4459adX7PX9j4D5AsSpe2o3ZtDN9YU9VHNzinowH',
       name: 'KYC Non-sanctioned citizenship Verification SBT',
       symbol: 'NONSAN',
     },
     {
-      uri: 'ipfs://QmcS1oxPNs59cM3zuYP3uQbu95JoegnCZ3wHnBHyS9YPUS',
+      uri: 'ipfs://QmYiRsyQ3iEEVg7LUKS6E77pUbTnBoUHAXMG434bBu2Lp1',
       name: 'KYC 18+ Verification SBT',
       symbol: 'KYC18',
     },

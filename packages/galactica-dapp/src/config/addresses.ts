@@ -1,4 +1,6 @@
 export const zkKYCRegistry = '0x68272A56A0e9b095E5606fDD8b6c297702C0dfe5';
+export const twitterZkCertificateRegistry =
+  '0xe262d4e095BAb2F6e32ED46C5bBec5Fe73f1a0eA';
 export const mockDApp = '0x599cBD89193cab8522AFbd16aEa918138Ee2a3C3';
 export const kycRequirementsDemoDApp =
   '0x13eca573ffa21c70cc00B43f1AC842c6F53D23f1';
@@ -9,10 +11,7 @@ export const galacticaInstitutions = [
 ];
 export const repeatableZkKYCTest = '0x1c050Ec2619f11AfB37bCb96df9e5C4dc960676c';
 
-export const twitterFollowersCountProof =
-  '0x172cb6C095A3708c4F5f424f3f5d170cf8556A1D';
-export const twitterZkCertificateRegistry =
-  '0xFa74c5025EaCC1CE76c90a19fF479e7135d3ccAA';
+export const twitterSBTManager = '0x8E642D6A2693658DB4DF24D4eEd6EB8C33359118';
 
 export const sbtIssuingContracts = [
   repeatableZkKYCTest,
@@ -25,8 +24,8 @@ const addresses = {
   galacticaInstitutions,
   repeatableZkKYCTest,
   zkKYCRegistry,
-  twitterFollowersCountProof,
   twitterZkCertificateRegistry,
+  twitterSBTManager,
   kycRequirementsDemoDApp,
   sbtIssuingContracts,
 };

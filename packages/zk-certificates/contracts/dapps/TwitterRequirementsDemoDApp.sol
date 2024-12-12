@@ -10,8 +10,7 @@ import {IVerificationSBTIssuer} from '../interfaces/IVerificationSBTIssuer.sol';
  * @author Galactica dev team
  * @notice An example DApp that requires a twitter proof to issue a Verification SBT.
  *  Registration can be repeated.
- *  The requirements of the TwitterZkCertificate (i.e. age, citizenship, etc.) are defined in the verifierWrapper.
- *  This demo DApp does not include fraud investigation features.
+ *  The requirements of the TwitterZkCertificate are defined in the verifierWrapper.
  */
 contract TwitterRequirementsDemoDApp is IVerificationSBTIssuer {
     IVerificationSBT public sbt;

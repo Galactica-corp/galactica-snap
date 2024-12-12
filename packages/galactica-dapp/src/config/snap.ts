@@ -97,7 +97,19 @@ export const twitterFollowersCountProofPublicInputDescriptions = [
   'merkle root',
   'current time',
   'user address',
-  `twitterZkCertificate guardian pubkey Ax`,
-  `twitterZkCertificate guardian pubkey Ay`,
+  `guardian pubkey Ax`,
+  `guardian pubkey Ay`,
   `followers threshold`,
+];
+
+export const twitterCreationTimeProofPublicInputDescriptions = [
+  'proof valid',
+  'verification SBT expiration',
+  'merkle root',
+  'current time',
+  'user address',
+  `guardian pubkey Ax`,
+  `guardian pubkey Ay`,
+  `creation time lower bound`,
+  `creation time upper bound`,
 ];

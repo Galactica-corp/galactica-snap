@@ -113,7 +113,7 @@ describe('Verification SBT Smart contract', () => {
     );
     mockDApp = (await mockDAppFactory.deploy(
       ageProofZkKYC.address,
-      'test URI',
+      'https://example.com/metadata',
       'VerificationSBT',
       'VerificationSBT',
     )) as MockDApp;
@@ -331,6 +331,12 @@ describe('Verification SBT Smart contract', () => {
     expect(await verificationSBT.isVerificationSBTValid(user.address)).to.be
       .false;
     expect(await verificationSBT.balanceOf(user.address)).to.be.equal(0);
+
+    // check that expired SBTs can still be found (e.g. for frontend purposes)
+    expect(await verificationSBT.tokenURI(tokenId)).to.be.equal(
+      'https://example.com/metadata',
+    );
+    expect(await verificationSBT.ownerOf(tokenId)).to.be.equal(user.address);
   });
 
   it('should revert on incorrect proof', async () => {

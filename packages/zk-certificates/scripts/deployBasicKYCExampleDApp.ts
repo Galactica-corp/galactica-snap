@@ -10,7 +10,7 @@ async function main() {
   // parameters
   const zkKYC = '0xfDa5904dC71a244Ab88D86CE015365c17FEbe3CE'; // you can reuse the zkKYC smart contract from the deployment of the RepeatableZKPTest
   const verificationSBT = {
-    uri: 'ipfs://QmeFsERdKfKW3fmdXVHvvwdkqVHNs3TU6oqEdUrgPchyw7',
+    uri: 'ipfs://QmdYZJP26w8dXHvR9g5Bykw4Ziqvgrst6p9XesZeR1qa2R',
     name: 'KYC Verification SBT',
     symbol: 'KYCOK',
   };

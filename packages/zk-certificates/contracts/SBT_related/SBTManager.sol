@@ -82,7 +82,7 @@ contract SBTManager is Ownable, Fallback {
                 input[8] == 1735689600,
                 'Creation time upper bound is not set correctly'
             );
-        } else if (index == 5) {
+        } else {
             revert('Invalid index');
         }
         require(

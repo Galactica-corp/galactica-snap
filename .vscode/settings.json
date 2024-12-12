@@ -35,10 +35,7 @@
   },
   "editor.indentSize": "tabSize",
   "editor.language.brackets": [],
-  "wake.compiler.solc.remappings": [
-    "@galactica-net/=node_modules/@galactica-net/",
-    "@openzeppelin/=node_modules/@openzeppelin/",
-    "eth-gas-reporter/=node_modules/eth-gas-reporter/",
-    "hardhat/=node_modules/hardhat/"
-  ]
+  "solidity.compileUsingRemoteVersion": "v0.8.17+commit.8df45f5f",
+  "solidity.packageDefaultDependenciesContractsDirectory": "packages/zk-certificates/contracts",
+  "solidity.nodemodulespackage": "node_modules"
 }
